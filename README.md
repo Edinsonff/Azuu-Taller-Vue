@@ -22,3 +22,5 @@ npm run lint
 
 ### Customize configuration
 See [Configuration Reference](https://cli.vuejs.org/config/).
+# Azuu-Taller-Vue
+Proyecto para azuu taller de arquitectura
