@@ -1,11 +1,15 @@
 <!DOCTYPE html>
-<html lang="">
+<html lang="es">
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
-    <link rel="icon" href="<%= BASE_URL %>favicon.ico">
+    <meta name="description" content="Pagina para mostrar el trabajo de Azuu Taller." />
+    <link rel="icon" href="./logo.png" type="image/png">
     <title><%= htmlWebpackPlugin.options.title %></title>
+    <link rel="prefetch" href="/gallery" as="document">
+    <link rel="prefetch" href="/nosotros" as="document">
+    <link rel="prefetch" href="/project/:id" as="document">
   </head>
   <body>
     <noscript>

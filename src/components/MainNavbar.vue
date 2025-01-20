@@ -32,16 +32,16 @@
         </svg>
       </button>
       <button
-        id="change-language-mobile"
         class="text-black dark:text-white mr-4"
         @click="toggleLanguage"
+        aria-label="Cambiar idioma"
       >
         {{ currentLanguage === "es" ? "ESP" : "ENG" }}
       </button>
       <button
-        id="mobile-menu-button"
         class="text-black dark:text-white"
         @click="toggleMobileMenuAndEmit"
+        aria-label="Abrir menú móvil"
       >
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -61,16 +61,37 @@
     </div>
     <nav class="hidden md:flex space-x-4 justify-center">
       <router-link
-        v-if="currentPage === 'ProjectGallery'"
+        v-if="currentPage === 'project-detail'"
         to="/nosotros"
         id="nosotros-link"
+        class="flex items-center space-x-2 text-white"
       >
         <img
-          src="https://img.icons8.com/?size=100&id=z4ZbAA3hfmxP&format=png"
+          src="@/assets/img/nosotros-icon.png"
           class="h-7 w-7 dark:invert dark:filter"
           alt="Nosotros"
         />
       </router-link>
+      <router-link
+        v-if="currentPage === 'project-detail'"
+        to="/gallery"
+        id="proyectos-link"
+        class="text-black dark:text-white"
+      >
+        <p>{{ $t("navbar.projects") }}</p>
+      </router-link>
+      <router-link
+        v-else-if="currentPage === 'ProjectGallery'"
+        to="/nosotros"
+        id="nosotros-link"
+      >
+        <img
+          src="@/assets/img/nosotros-icon.png"
+          class="h-7 w-7 dark:invert dark:filter"
+          alt="Enlace a la sección Nosotros"
+        />
+      </router-link>
+
       <router-link v-else to="/gallery" id="proyectos-link">
         <p class="text-black dark:text-white">{{ $t("navbar.projects") }}</p>
       </router-link>
@@ -80,8 +101,8 @@
         class="hover:text-gray-900"
       >
         <img
-          src="https://img.icons8.com/?size=100&id=16712&format=png"
-          alt="WhatsApp"
+          src="@/assets/icons/whatsapp.png"
+          alt="Enlace a WhatsApp de Azuu Taller"
           class="h-6 w-6 dark:invert"
         />
       </a>
@@ -91,15 +112,15 @@
         class="hover:text-gray-900"
       >
         <img
-          src="https://img.icons8.com/?size=100&id=32292&format=png"
-          alt="Instagram"
+          src="@/assets/icons/instagram.png"
+          alt="Enlace a Instagram de Azuu Taller"
           class="h-6 w-6 dark:invert"
         />
       </a>
       <a href="mailto:equipo@azuutaller.com" class="hover:text-gray-900">
         <img
-          src="https://img.icons8.com/?size=100&id=53388&format=png"
-          alt="Gmail"
+          src="@/assets/icons/email.png"
+          alt="Enlace al correo de Azuu Taller"
           class="h-6 w-6 dark:invert"
         />
       </a>
@@ -166,28 +187,32 @@
         </div>
         <nav class="flex flex-col space-y-4">
           <router-link
-            v-if="currentPage === 'ProjectGallery'"
+            v-if="
+              currentPage === 'ProjectGallery' ||
+              currentPage === 'project-detail'
+            "
             to="/nosotros"
             @click="toggleMobileMenu"
             class="flex items-center px-4 py-2 text-md text-black dark:text-white hover:bg-gray-700 dark:hover:bg-gray-300 rounded"
             id="nosotros-link"
           >
             <img
-              src="https://img.icons8.com/?size=100&id=z4ZbAA3hfmxP&format=png"
+              src="@/assets/img/nosotros-icon.png"
               class="h-6 w-6 mr-2 dark:invert"
               alt="Nosotros"
             />
             {{ $t("modal.about") }}
           </router-link>
           <router-link
-            v-else
+            v-if="
+              currentPage === 'nosotros' || currentPage === 'project-detail'
+            "
             to="/gallery"
             @click="toggleMobileMenu"
             class="flex items-center px-4 py-2 text-md text-black dark:text-white hover:bg-gray-700 dark:hover:bg-gray-300 rounded"
-            id="proyectos-link"
           >
             <img
-              src="https://img.icons8.com/?size=100&id=H0yU_dcDBQxD&format=png"
+              src="@/assets/img/projects-icon.png"
               class="h-7 w-7 mr-1 dark:invert"
               alt="Proyectos"
             />
@@ -199,8 +224,8 @@
             target="_blank"
           >
             <img
-              src="https://img.icons8.com/?size=100&id=16712&format=png"
-              alt="WhatsApp"
+              src="@/assets/icons/whatsapp.png"
+              alt="Enlace a Whatsapp de Azuu Taller"
               class="h-6 w-6 mr-2 dark:invert"
             />
             WhatsApp
@@ -211,8 +236,8 @@
             target="_blank"
           >
             <img
-              src="https://img.icons8.com/?size=100&id=32292&format=png"
-              alt="Instagram"
+              src="@/assets/icons/instagram.png"
+              alt="Enlace a Instagram de Azuu Taller"
               class="h-6 w-6 mr-2 dark:invert"
             />
             Instagram
@@ -223,7 +248,7 @@
             target="_blank"
           >
             <img
-              src="https://img.icons8.com/?size=100&id=53388&format=png"
+              src="@/assets/icons/email.png"
               alt="Gmail"
               class="h-6 w-6 mr-2 dark:invert"
             />
@@ -265,7 +290,6 @@ export default {
     toggleMobileMenu,
     toggleMobileMenuAndEmit() {
       this.toggleMobileMenu();
-      this.$emit("toggleModal", this.isModalOpen);
     },
     toggleLanguage() {
       const newLang = this.currentLanguage === "es" ? "en" : "es";

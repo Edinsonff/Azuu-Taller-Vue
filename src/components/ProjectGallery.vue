@@ -1,26 +1,39 @@
 <template>
   <div
     class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 mt-16 m-4"
+    role="list"
+    aria-label="Lista de proyectos"
   >
     <div
       v-for="project in projects"
       :key="project.id"
-      class="relative rounded-lg shadow-lg overflow-hidden hover:scale-105 transition-transform duration-500"
+      class="relative rounded-lg shadow-lg overflow-hidden hover:scale-105 transition-transform duration-500 justify-center"
+      role="listitem"
+      aria-labelledby="project-title"
     >
-      <router-link :to="{ name: 'project-detail', params: { id: project.id } }">
+      <router-link
+        :to="{ name: 'project-detail', params: { id: project.id } }"
+        aria-label="Ver detalles del proyecto: {{ project.title[language] }}"
+      >
         <img
-          :src="project.imgSrc"
+          :src="project.images[0]"
           :alt="project.altText"
-          class="w-full h-full object-cover"
+          class="w-full h-full object-contain"
+          loading="lazy"
         />
+        <div
+          class="absolute inset-0 bg-gradient-to-t from-black to-transparent opacity-75 pointer-events-none"
+          role="presentation"
+          aria-hidden="true"
+        ></div>
+        <div
+          class="absolute bottom-0 left-0 right-0 flex justify-center items-center text-white text-center pb-2"
+        >
+          <h3 id="project-title" class="text-xl font-bold cursor-default">
+            {{ project.title[language] }}
+          </h3>
+        </div>
       </router-link>
-      <div
-        class="absolute inset-0 bg-gradient-to-t from-black to-transparent opacity-75 pointer-events-none"
-      ></div>
-      <div class="absolute bottom-4 left-4 text-white">
-        <h3 class="text-xl font-bold">{{ project.title[language] }}</h3>
-        <p class="text-sm">{{ project.location[language] }}</p>
-      </div>
     </div>
   </div>
 </template>

@@ -5,6 +5,10 @@ import ProjectSlider from "@/components/ProjectSlider.vue";
 import ProjectGallery from "@/components/ProjectGallery.vue";
 const routes = [
   {
+    path: "/",
+    redirect: "/slider",
+  },
+  {
     path: "/slider",
     name: "ProjectSlider",
     component: ProjectSlider,

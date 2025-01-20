@@ -4,50 +4,53 @@
 
 
 @font-face {
-    font-family: 'RovelleUno';
-    src: url('./fonts/RovelleUno-Regular-AF65eae0b231210.otf') format('opentype');
-    font-weight: normal;
-    font-style: normal;
-  }
-  
-  @font-face {
-    font-family: 'RovelleUno';
-    src: url('./fonts/RovelleUno-Bold-AF65eae0b271293.otf') format('opentype');
-    font-weight: bold;
-    font-style: normal;
-  }
-  
-  @font-face {
-    font-family: 'RovelleUno';
-    src: url('./fonts/RovelleUno-Italic-AF65eae0b235929.otf') format('opentype');
-    font-weight: normal;
-    font-style: italic;
-  }
-  
-  @font-face {
-    font-family: 'RovelleUno';
-    src: url('./fonts/RovelleUno-BoldItalic-AF65eae0b2757e5.otf') format('opentype');
-    font-weight: bold;
-    font-style: italic;
-  }
-  
-  @font-face {
-    font-family: 'RovelleUno';
-    src: url('./fonts/RovelleUno-Light-AF65eae0b24b993.otf') format('opentype');
-    font-weight: 300;
-    font-style: normal;
-  }
-  
-  @font-face {
-    font-family: 'RovelleUno';
-    src: url('./fonts/RovelleUno-LightItalic-AF65eae0b2505fa.otf') format('opentype');
-    font-weight: 300;
-    font-style: italic;
-  }
-  
-  
-  /* Aplicar la fuente globalmente */
-  body {
-    font-family: 'RovelleUno', sans-serif;
-  }
-  
+  font-family: 'RovelleUno';
+  src: url('./fonts/RovelleUno-Regular-AF65eae0b231210.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'RovelleUno';
+  src: url('./fonts/RovelleUno-Bold-AF65eae0b271293.woff2') format('woff2');
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'RovelleUno';
+  src: url('./fonts/RovelleUno-Italic-AF65eae0b235929.woff2') format('woff2');
+  font-weight: normal;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'RovelleUno';
+  src: url('./fonts/RovelleUno-BoldItalic-AF65eae0b2757e5.woff2') format('woff2');
+  font-weight: bold;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'RovelleUno';
+  src: url('./fonts/RovelleUno-Light-AF65eae0b24b993.woff2') format('woff2');
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'RovelleUno';
+  src: url('./fonts/RovelleUno-LightItalic-AF65eae0b2505fa.woff2') format('woff2');
+  font-weight: 300;
+  font-style: italic;
+}
+
+body {
+  font-family: 'RovelleUno', sans-serif;
+}
+
+html.overflow-hidden {
+  overflow: hidden;
+  position: fixed;
+  width: 100%;
+}
