@@ -1,20 +1,20 @@
 <template>
   <header
-    class="w-full fixed top-0 z-10 flex justify-between items-center px-4 py-2 bg-white dark:bg-gray-900 shadow-lg"
+    class="w-full top-0 z-10 flex justify-between items-center px-4 py-2 bg-white dark:bg-gray-900 h-32"
   >
-    <div class="flex items-center">
+    <div class="flex items-center pl-[60px]">
       <router-link to="/slider" class="flex items-center">
         <img
           src="@/assets/img/logo.png"
           alt="Logo de Azuu Taller"
-          class="h-15 w-12 mr-2 transition-transform duration-300 hover:scale-105"
+          class="h-[70px] w-[105px] mr-2 transition-transform duration-300 hover:scale-105"
         />
         <div class="flex">
-          <span class="text-sm text-black dark:text-white">AZUU</span>
+          <span class="text-[16px] text-black dark:text-white">AZUU</span>
         </div>
       </router-link>
     </div>
-    <div class="flex items-center md:hidden">
+    <div class="flex items-center md:hidden pr-10">
       <button id="toggle" class="mr-4" @click="toggleDarkMode">
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -59,7 +59,7 @@
         </svg>
       </button>
     </div>
-    <nav class="hidden md:flex space-x-4 justify-center">
+    <nav class="hidden md:flex space-x-4 justify-center pr-[60px]">
       <router-link
         v-if="currentPage === 'project-detail'"
         to="/nosotros"

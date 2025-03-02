@@ -18,12 +18,12 @@
         <img
           src="@/assets/img/nosotros.png"
           alt="Imagen de Jean Rodriguez & Carlos Perez, miembros del equipo"
-          class="mt-4 w-full max-w-xs md:max-w-md lg:max-w-lg rounded-lg shadow-lg"
+          class="mt-4 w-full max-w-xs md:max-w-md lg:max-w-lg shadow-lg"
           loading="lazy"
         />
 
         <p class="text-center text-sm mt-2 mb-3 text-gray-600 dark:text-white">
-          Jean Rodriguez & Carlos Perez
+          Carlos Perez & Jean Rodriguez
         </p>
 
         <p
@@ -39,7 +39,7 @@
         </p>
 
         <p class="text-sm italic text-gray-600 dark:text-white my-4">
-          Azuu taller de arquitectura. 2024
+          Azuu taller de arquitectura.
         </p>
       </section>
     </main>

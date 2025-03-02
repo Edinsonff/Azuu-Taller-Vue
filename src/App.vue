@@ -114,4 +114,18 @@ body {
 .overflow-hidden {
   overflow: hidden;
 }
+
+*::-webkit-scrollbar {
+  display: none;
+}
+
+/* Para Firefox */
+* {
+  scrollbar-width: none;
+}
+
+/* Para Edge e IE */
+* {
+  -ms-overflow-style: none;
+}
 </style>
