@@ -36,7 +36,6 @@ export default {
   mounted() {
     const video = this.$refs.videoPlayer;
     if (video) {
-      // Forzamos la carga y reproducción
       video.load();
       video.play().catch((error) => {
         console.warn("Video autoplay failed:", error);

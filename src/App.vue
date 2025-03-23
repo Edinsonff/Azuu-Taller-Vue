@@ -4,12 +4,10 @@
     class="min-h-screen min-w-screen bg-white dark:bg-gray-900 text-black dark:text-white"
     :class="{ 'overflow-hidden': isLoading }"
   >
-    <!-- Pantalla de carga con transición -->
     <transition name="fade" mode="out-in" @after-leave="handleLoaded">
       <LoadingScreen v-if="isLoading" :isInitialLoad="isFirstLoad" />
     </transition>
 
-    <!-- Navbar con animación fade -->
     <transition name="fade" mode="out-in">
       <MainNavbar
         v-if="!isLoading && $route.name !== 'ProjectSlider'"
@@ -17,7 +15,6 @@
       />
     </transition>
 
-    <!-- Contenido de las vistas con animación fade -->
     <router-view v-if="!isLoading && showSlider" v-slot="{ Component }">
       <transition name="fade" mode="out-in">
         <component :is="Component" />
@@ -47,13 +44,11 @@ export default {
     },
   },
   mounted() {
-    // Detecta si la página inicial es `projectSlider`
     if (this.$route.name === "projectSlider") {
       this.isFirstLoad = false;
       this.isLoading = false;
       this.showSlider = true;
     } else {
-      // Muestra la pantalla de carga durante 5 segundos si no es `projectSlider`
       setTimeout(() => {
         this.isLoading = false;
         this.showSlider = true;
@@ -119,12 +114,10 @@ body {
   display: none;
 }
 
-/* Para Firefox */
 * {
   scrollbar-width: none;
 }
 
-/* Para Edge e IE */
 * {
   -ms-overflow-style: none;
 }

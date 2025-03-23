@@ -142,7 +142,6 @@ export default {
   will-change: background-position;
 }
 
-/* Estilos y animaciones específicas para móvil */
 @media (max-width: 1023px) {
   .mobile-slide.active .background-image {
     animation: slideLeftRight 15s linear;

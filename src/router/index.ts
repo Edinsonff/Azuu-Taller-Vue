@@ -3,6 +3,8 @@ import NosotrosView from "@/components/NosotrosView.vue";
 import ProjectDetail from "@/components/ProjectDetail.vue";
 import ProjectSlider from "@/components/ProjectSlider.vue";
 import ProjectGallery from "@/components/ProjectGallery.vue";
+import Contactenos from "@/components/Contactenos.vue";
+
 const routes = [
   {
     path: "/",
@@ -28,6 +30,11 @@ const routes = [
     path: "/gallery",
     name: "ProjectGallery",
     component: ProjectGallery,
+  },
+  {
+    path: "/contacto",
+    name: "contacto",
+    component: Contactenos,
   },
 ];
 
