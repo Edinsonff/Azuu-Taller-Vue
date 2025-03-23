@@ -5,10 +5,10 @@ export function toggleMobileMenu() {
 
     if (!mobileMenu.classList.contains("hidden")) {
       document.body.classList.add("overflow-hidden");
-      document.documentElement.classList.add("overflow-hidden"); // Aplicar al html
+      document.documentElement.classList.add("overflow-hidden");
     } else {
       document.body.classList.remove("overflow-hidden");
-      document.documentElement.classList.remove("overflow-hidden"); // Remover del html
+      document.documentElement.classList.remove("overflow-hidden");
     }
   }
 }

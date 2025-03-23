@@ -62,20 +62,18 @@ export default {
   data() {
     return {
       projects,
-      hoveredProject: null, // Estado para rastrear la tarjeta sobre la que está el mouse
+      hoveredProject: null,
     };
   },
 };
 </script>
 
 <style scoped>
-/* Oculta el título por defecto */
 .opacity-0 {
   opacity: 0;
   transition: opacity 0.3s ease-in-out;
 }
 
-/* Muestra el título cuando se hace hover */
 .opacity-100 {
   opacity: 1;
   transition: opacity 0.3s ease-in-out;

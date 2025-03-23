@@ -88,7 +88,6 @@
               </svg>
             </button>
 
-            <!-- Imagen en el modal -->
             <div
               class="relative w-full max-w-screen-xl lg:max-w-[90vw] lg:h-[100vh] h-[80vh] mx-auto"
             >
@@ -384,7 +383,7 @@ export default {
 .cursor-custom-prev {
   cursor: url("../assets/arrow-prev-svgrepo-com.svg"), auto;
 }
-/* Modal Transition Effects */
+
 .modal-enter-active,
 .modal-leave-active {
   transition: opacity 0.3s ease;
@@ -402,17 +401,17 @@ button[aria-label="Close modal"] {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 3rem; /* Asegura área clickeable mayor */
-  height: 3rem; /* Ajusta el tamaño */
-  background-color: rgba(0, 0, 0, 0.5); /* Fondo semi-transparente */
-  border-radius: 50%; /* Redondeado */
+  width: 3rem;
+  height: 3rem;
+  background-color: rgba(0, 0, 0, 0.5);
+  border-radius: 50%;
   transition: background-color 0.2s ease;
   cursor: pointer;
   z-index: 50;
 }
 
 button[aria-label="Close modal"]:hover {
-  background-color: rgba(0, 0, 0, 0.75); /* Cambia color al hacer hover */
+  background-color: rgba(0, 0, 0, 0.75);
 }
 
 @media (max-width: 768px) and (orientation: landscape) {
@@ -422,7 +421,6 @@ button[aria-label="Close modal"]:hover {
   }
 }
 
-/* Responsive Close Button Positioning */
 @media (max-width: 768px) {
   .modal button[aria-label="Close modal"] {
     top: 1rem;
