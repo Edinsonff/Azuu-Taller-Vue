@@ -24,6 +24,16 @@ export const messages: { [key: string]: { [key: string]: string | object } } = {
       projects: "Projects",
       about: "About Us",
     },
+    contact: {
+      title: "CONTACT US",
+      name: "Name*",
+      email: "Email*",
+      subject: "Subject",
+      message: "Message",
+      send: "Send",
+      success: "Message sent successfully",
+      error: "There was an error sending the message",
+    },
   },
   es: {
     navbar: {
@@ -49,6 +59,16 @@ export const messages: { [key: string]: { [key: string]: string | object } } = {
     slider: {
       projects: "Proyectos",
       about: "Nosotros",
+    },
+    contact: {
+      title: "CONTÁCTENOS",
+      name: "Nombre*",
+      email: "Email*",
+      subject: "Asunto",
+      message: "Mensaje",
+      send: "Enviar",
+      success: "Mensaje enviado correctamente",
+      error: "Hubo un error al enviar el mensaje",
     },
   },
 };

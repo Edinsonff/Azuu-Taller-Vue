@@ -1,8 +1,9 @@
 <template>
   <div class="min-h-screen bg-white dark:bg-gray-900 py-16 px-4">
     <div class="container mx-auto max-w-4xl">
-      <h1 class="text-3xl text-gray-700 dark:text-white mb-8">| CONTÁCTENOS</h1>
-
+      <h1 class="text-3xl text-gray-700 dark:text-white mb-8">
+        | {{ $t("contact.title") }}
+      </h1>
       <form @submit.prevent="sendEmail" class="space-y-6">
         <div>
           <input
@@ -10,8 +11,8 @@
             id="name"
             v-model="formData.name"
             required
-            class="w-full px-4 py-3 border-b border-gray-300 focus:border-gray-500 focus:outline-none text-black dark:text-white dark:bg-gray-900"
-            placeholder="Nombre*"
+            class="w-full px-4 py-3 border-b border-gray-300 focus:border-gray-500 text-black dark:text-white dark:bg-gray-900"
+            :placeholder="$t('contact.name')"
           />
         </div>
 
@@ -21,8 +22,8 @@
             id="email"
             v-model="formData.email"
             required
-            class="w-full px-4 py-3 border-b border-gray-300 focus:border-gray-500 focus:outline-none text-black dark:text-white dark:bg-gray-900"
-            placeholder="Email*"
+            class="w-full px-4 py-3 border-b border-gray-300 focus:border-gray-500 text-black dark:text-white dark:bg-gray-900"
+            :placeholder="$t('contact.email')"
           />
         </div>
 
@@ -32,8 +33,8 @@
             id="subject"
             v-model="formData.subject"
             required
-            class="w-full px-4 py-3 border-b border-gray-300 focus:border-gray-500 focus:outline-none text-black dark:text-white dark:bg-gray-900"
-            placeholder="Asunto"
+            class="w-full px-4 py-3 border-b border-gray-300 focus:border-gray-500 text-black dark:text-white dark:bg-gray-900"
+            :placeholder="$t('contact.subject')"
           />
         </div>
 
@@ -43,8 +44,8 @@
             v-model="formData.message"
             rows="6"
             required
-            class="w-full px-4 py-3 border-b border-gray-300 focus:border-gray-500 focus:outline-none resize-none text-black dark:text-white dark:bg-gray-900"
-            placeholder="Mensaje"
+            class="w-full px-4 py-3 border-b border-gray-300 focus:border-gray-500 resize-none text-black dark:text-white dark:bg-gray-900"
+            :placeholder="$t('contact.message')"
           ></textarea>
         </div>
 
@@ -53,7 +54,7 @@
             type="submit"
             class="px-6 py-2 text-gray-700 border border-gray-800 dark:text-white hover:bg-gray-500 font-medium text-xl transition"
           >
-            Enviar
+            {{ $t("contact.send") }}
           </button>
         </div>
       </form>
@@ -104,7 +105,7 @@ export default {
                 <svg class="h-6 w-6 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
                 </svg>
-                <span>Mensaje enviado correctamente</span>
+                <span>${this.t("contact.success")}</span>
               </div>
             `;
           document.body.appendChild(notification);
@@ -138,7 +139,7 @@ export default {
                 <svg class="h-6 w-6 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
                 </svg>
-                <span>Hubo un error al enviar el mensaje</span>
+                <span>${this.t("contact.error")}</span>
               </div>
             `;
           document.body.appendChild(notification);
